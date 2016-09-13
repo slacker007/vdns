@@ -1,4 +1,4 @@
-# Visualization
+# VDNS - BSIDES AUGUSTA 2016
 VDNS is a python application that was written as one of the MHF Modules.  It parses Bro's dns.log file and injests the results into the neo4j database on Mercenary-Linux.   
 
 ***Example:***
