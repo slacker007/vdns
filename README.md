@@ -1,5 +1,6 @@
 # VDNS - BSIDES AUGUSTA 2016
 VDNS is a python application that was written as one of the MHF Modules.  It parses Bro's dns.log file and injests the results into the neo4j database on Mercenary-Linux.  This module requires that bro is installed on the system.  
+***[Link to Demo on Youtube]*** (https://youtu.be/D6SLA4KoywM)
 
 ***Example:***
 ```
@@ -30,7 +31,6 @@ Enter neo4j password:
 [+] 13 DNS Log Entries Injested
 [+] 14 DNS Log Entries Injested
 ```
-![VNDS Screenshot 1](/images/Capture1.PNG)
-(https://youtu.be/D6SLA4KoywM)
+![VNDS Screenshot 1 & Demo Video](/images/Capture1.PNG)
 ![VNDS Screenshot 2](/images/Capture2.PNG)
 ![VNDS Screenshot 3](/images/Capture3.PNG)
