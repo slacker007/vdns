@@ -2,10 +2,7 @@
 
 import sys
 import subprocess
-import csv
-import datetime
 import optparse
-import itertools
 import threading
 from neo4jrestclient.client import GraphDatabase
 from getpass import getpass
