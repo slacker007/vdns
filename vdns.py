@@ -34,7 +34,7 @@ def main():
     VDNS was written to be included in the MercenaryHuntFramework  and on Mercenary-Linux
     It can however be run as a standalone application.  This application requires that bro-cut
     be installed on the host. Default location that it looks for bro-cut is /usr/local/bro/bin/bro-cut
-    If your installation path for bro-cut is different, modify the sourcefile accordingly. 
+    If your installation path for bro-cut is different, modify the sourcefile accordingly.
     '''
 
     # Handle command-line arguments
@@ -44,7 +44,6 @@ def main():
     #print OPTIONS, ARGUMENTS
 
     gdb = create_session()
-    
     # Create a BRO log file reader and pull from the logfile
     full_query = "cat {0} | /usr/local/bro/bin/bro-cut uid id.orig_h id.orig_p\
             id.resp_h id.resp_p query answers qtype_name ".format(OPTIONS.logfile)
@@ -70,7 +69,7 @@ def main():
     nval5 = gdb.node.create(s_ip="NULL") #create node
     nval5.labels.add('DNS_SOURCE_IPS') #initialize node label w/ null node
     nval6 = gdb.node.create(d_ip='NULL')
-    nval6.labels.add('DNS_SOURCE_IPS') 
+    nval6.labels.add('DNS_SOURCE_IPS')
     p = subprocess.Popen(full_query, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     cnt = 0 #Counter to Track Number of Entries based on threads created to ingest them
     for line  in p.stdout.readlines():
@@ -104,7 +103,7 @@ def main():
                 v6 = lline2
                 querylist = gdb.labels.get('DNS_QUERIES') #get handle on query transaction for all nodes for the DNS_QUERY LABEL
                 check = querylist.get(query=lline2)
-                if (len(check) == 0): # If no query matches a query already under DNS_QUERIES label 
+                if (len(check) == 0): # If no query matches a query already under DNS_QUERIES label
                     hquery = gdb.nodes.create(query=lline2)
                     queries.add(hquery)
             elif (val == 6): #Answers
