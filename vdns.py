@@ -37,7 +37,7 @@ def main():
     # Handle command-line arguments
     PARSER = optparse.OptionParser()
     PARSER.add_option('--logfile', default=None, help='Logfile to read from.  Default: %default')
-    (OPTIONS, ARGUMENTS) = PARSER.parse_args()
+    PARSER.parse_args()
     #print OPTIONS, ARGUMENTS
 
     gdb = create_session()
