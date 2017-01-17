@@ -66,7 +66,7 @@ def main():
     nval5 = gdb.node.create(s_ip="NULL") #create node
     nval5.labels.add('DNS_SOURCE_IPS') #initialize node label w/ null node
     nval6 = gdb.node.create(d_ip='NULL')
-    nval6.labels.add('DNS_SOURCE_IPS')
+    nval6.labels.add('DNS_DEST_IPS')
     p = subprocess.Popen(full_query, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     cnt = 0 #Counter to Track Number of Entries based on threads created to ingest them
     for line  in p.stdout.readlines():
