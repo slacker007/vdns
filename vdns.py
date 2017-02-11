@@ -37,13 +37,12 @@ def main():
     # Handle command-line arguments
     PARSER = optparse.OptionParser()
     PARSER.add_option('--logfile', default=None, help='Logfile to read from.  Default: %default')
-    PARSER.parse_args()
-    #print OPTIONS, ARGUMENTS
+    (options, args) = PARSER.parse_args() #changed Feb2017 Throwing error for unknown var OPTIONS
 
     gdb = create_session()
     # Create a BRO log file reader and pull from the logfile
     full_query = "cat {0} | /usr/local/bro/bin/bro-cut uid id.orig_h id.orig_p\
-            id.resp_h id.resp_p query answers qtype_name ".format(OPTIONS.logfile)
+            id.resp_h id.resp_p query answers qtype_name ".format(options.logfile)
 
     # ___ Fails the first time even after the NUll node is added____
     dnsquery = gdb.labels.create("DNS_COMMS") #create label
